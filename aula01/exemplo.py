@@ -24,14 +24,6 @@ for idx, x in enumerate(var1):
 var1.append(20)
 print(var1)
 
-
-var1 = {1, 5, 3, 1}
-print(var1)
-
-var1 = {'a': 1, 'b': 2}
-print(var1)
-
-
 class Filme:
   def __init__(self, nome, ano):
     self.nome = nome
