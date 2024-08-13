@@ -8,5 +8,7 @@ public class PosicaoClube {
     public Integer vitorias;
     public Integer derrotas;
     public Integer empates;
+    public Integer pro;
+    public Integer contra;
 
 }

@@ -21,6 +21,13 @@ public class CsvReader {
                 String line;
                 br.readLine();
                 while ((line = br.readLine()) != null) {
+
+                    // 2017,18,America-MG,10,10,18,30:47
+                    // [0] = 2017
+                    // [1] = 18
+                    // [2] = America-MG
+
+                    // [6] = 30:47
                     String[] values = line.split(",");
 
                     PosicaoClube posicaoClube = new PosicaoClube();
@@ -31,6 +38,9 @@ public class CsvReader {
                     posicaoClube.derrotas = Integer.parseInt(values[4]);
                     posicaoClube.empates = Integer.parseInt(values[5]);
 
+                    String[] gols = values[6].split(":");
+                    posicaoClube.pro = Integer.parseInt(gols[0]);
+                    posicaoClube.contra = Integer.parseInt(gols[1]);
 
                     data.add(posicaoClube);
                 }
