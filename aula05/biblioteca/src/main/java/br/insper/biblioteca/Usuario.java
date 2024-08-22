@@ -1,9 +1,29 @@
 package br.insper.biblioteca;
 
+import java.util.ArrayList;
+
 public class Usuario {
     private String nome;
     private String endereco;
     private String email;
+    private Biblioteca biblioteca;
+    private ArrayList<Emprestimo> emprestimos = new ArrayList<>();
+
+    public void adicionaEmprestimo(Emprestimo emprestimo) {
+        emprestimos.add(emprestimo);
+    }
+
+    public ArrayList<Emprestimo> getEmprestimos() {
+        return emprestimos;
+    }
+
+    public Biblioteca getBiblioteca() {
+        return biblioteca;
+    }
+
+    public void setBiblioteca(Biblioteca biblioteca) {
+        this.biblioteca = biblioteca;
+    }
 
     public String getNome() {
         return nome;
@@ -28,4 +48,6 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 }

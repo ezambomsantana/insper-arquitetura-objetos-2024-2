@@ -4,6 +4,15 @@ public class Livro {
     private String nome;
     private String  autor;
     private Boolean disponivel;
+    private Biblioteca biblioteca;
+
+    public Biblioteca getBiblioteca() {
+        return biblioteca;
+    }
+
+    public void setBiblioteca(Biblioteca biblioteca) {
+        this.biblioteca = biblioteca;
+    }
 
     public String getNome() {
         return nome;

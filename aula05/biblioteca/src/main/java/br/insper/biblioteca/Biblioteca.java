@@ -1,8 +1,27 @@
 package br.insper.biblioteca;
 
+
+import java.util.ArrayList;
+
 public class Biblioteca {
     private String nome;
     private String endereco;
+    private ArrayList<Usuario> usuarios = new ArrayList<>();
+    private ArrayList<Livro> livros = new ArrayList<>();
+
+    public void adicionaUsuario(Usuario usuario) {
+        usuarios.add(usuario);
+    }
+
+    public ArrayList<Livro> getLivros() {
+        return livros;
+    }
+
+
+    public ArrayList<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
 
     public String getNome() {
         return nome;
