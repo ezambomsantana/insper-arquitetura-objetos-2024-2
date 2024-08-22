@@ -8,6 +8,15 @@ public class Usuario {
     private String email;
     private Biblioteca biblioteca;
     private ArrayList<Emprestimo> emprestimos = new ArrayList<>();
+    private ArrayList<Reserva> reservas = new ArrayList<>();
+
+    public void adicionaReserva(Reserva reserva) {
+        reservas.add(reserva);
+    }
+
+    public ArrayList<Reserva> getReservas() {
+        return reservas;
+    }
 
     public void adicionaEmprestimo(Emprestimo emprestimo) {
         emprestimos.add(emprestimo);

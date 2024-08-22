@@ -7,6 +7,15 @@ public class Emprestimo {
     private String status;
     private LocalDateTime dataDevolucao;
     private Usuario usuario;
+    private Livro livro;
+
+    public Livro getLivro() {
+        return livro;
+    }
+
+    public void setLivro(Livro livro) {
+        this.livro = livro;
+    }
 
     public Usuario getUsuario() {
         return usuario;

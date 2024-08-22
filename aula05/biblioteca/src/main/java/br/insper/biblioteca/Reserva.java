@@ -6,6 +6,25 @@ public class Reserva {
     private String codigo;
     private LocalDateTime localDateTime;
 
+    private Usuario usuario;
+    private Livro livro;
+
+    public Livro getLivro() {
+        return livro;
+    }
+
+    public void setLivro(Livro livro) {
+        this.livro = livro;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
     public String getCodigo() {
         return codigo;
     }
