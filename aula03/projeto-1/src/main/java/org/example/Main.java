@@ -45,7 +45,7 @@ public class Main {
 
         ArrayList<Time> listaTimes = new ArrayList<>(times.values());
         for (Time t : listaTimes) {
-            
+
 
         }
     }
