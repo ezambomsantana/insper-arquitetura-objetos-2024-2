@@ -65,6 +65,11 @@ public class Main {
                 usuarioService.listarUsuarios();
             }
 
+            // adicionar as outras operacoes:
+            // Cadastrar e Listar Livros
+            // Cadastrar e Listar Reservas
+            // Cadastrar e Listar Emprestimos
+
         }
 
 
