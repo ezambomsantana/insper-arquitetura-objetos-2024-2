@@ -1,11 +1,14 @@
 package br.insper.biblioteca;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 
 public class Biblioteca {
     private String nome;
     private String endereco;
+    @JsonIgnore
     private ArrayList<Usuario> usuarios = new ArrayList<>();
     private ArrayList<Livro> livros = new ArrayList<>();
 

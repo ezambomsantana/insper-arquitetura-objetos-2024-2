@@ -1,8 +1,23 @@
 package br.insper.biblioteca;
 
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 
+@Service
 public class BibliotecaService {
+
+  /*  private BibliotecaService() {
+    }
+
+    private static BibliotecaService bibliotecaService = null;
+
+    public static BibliotecaService getInstance() {
+        if (bibliotecaService == null) {
+            bibliotecaService = new BibliotecaService();
+        }
+        return bibliotecaService;
+    }*/
 
     private ArrayList<Biblioteca> bibliotecas = new ArrayList<>();
     public void cadastrarBiblioteca(Biblioteca biblioteca) {
