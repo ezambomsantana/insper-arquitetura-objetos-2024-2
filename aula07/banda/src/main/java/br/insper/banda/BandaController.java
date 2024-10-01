@@ -1,5 +1,6 @@
 package br.insper.banda;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ public class BandaController {
 
     @PostMapping("/banda")
     @ResponseStatus(HttpStatus.CREATED)
-    public String cadastrarBanda(@RequestBody Banda banda) {
+    public String cadastrarBanda(@Valid @RequestBody Banda banda) {
         return bandaService.cadastrarBanda(banda);
     }
 
@@ -26,7 +27,7 @@ public class BandaController {
 
     @DeleteMapping("/banda/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void listarBandas(@PathVariable Integer id) {
+    public void excluirBanda(@PathVariable Integer id) {
         bandaService.excluirBanda(id);
     }
 

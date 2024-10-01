@@ -1,13 +1,22 @@
 package br.insper.banda;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.ArrayList;
 
 public class Banda {
+    @Min(1)
     private Integer id;
+    @NotBlank
     private String nome;
+    @NotBlank
     private String pais;
+    @NotNull
+    @Min(1950)
     private Integer anoFormacao;
     @JsonIgnore
     private ArrayList<Musica> musicas  = new ArrayList<>();

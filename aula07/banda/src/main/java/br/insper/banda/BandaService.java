@@ -39,8 +39,10 @@ public class BandaService {
 
     public void excluirBanda(Integer id) {
         Banda banda = buscarBanda(id);
-        if (banda.getMusicas().isEmpty()) {
+        if (banda != null && banda.getMusicas().isEmpty()) {
             bandas.removeIf(b -> b.getId().equals(id));
+        } else {
+            throw new BandaNaoEncontradaException("Banda: " + id + " nao encontrada");
         }
     }
 }
