@@ -5,27 +5,26 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 
+@Document
 public class Banda {
-    @Min(1)
-    private Integer id;
-    @NotBlank
+    @Id
+    private String id;
     private String nome;
-    @NotBlank
     private String pais;
-    @NotNull
-    @Min(1950)
     private Integer anoFormacao;
     @JsonIgnore
     private ArrayList<Musica> musicas  = new ArrayList<>();
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

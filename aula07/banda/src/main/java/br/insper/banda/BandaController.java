@@ -27,7 +27,7 @@ public class BandaController {
 
     @DeleteMapping("/banda/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void excluirBanda(@PathVariable Integer id) {
+    public void excluirBanda(@PathVariable String id) {
         bandaService.excluirBanda(id);
     }
 

@@ -1,46 +1,39 @@
 package br.insper.banda;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class BandaService {
 
-    private ArrayList<Banda> bandas = new ArrayList<>();
+    @Autowired
+    private BandaRepository bandaRepository;
 
 
     public String cadastrarBanda(Banda banda) {
-        bandas.add(banda);
+        bandaRepository.save(banda);
         return "Banda cadastrada com sucesso";
     }
 
     public ArrayList<Banda> listarBandas(String pais) {
         if (pais != null) {
-            ArrayList<Banda> response = new ArrayList<>();
-            for (Banda banda : bandas) {
-                if (banda.getPais().equals(pais)) {
-                    response.add(banda);
-                }
-            }
-            return response;
+            return bandaRepository.findByPais(pais);
         }
-        return bandas;
+        return new ArrayList<>(bandaRepository.findAll());
     }
 
-    public Banda buscarBanda(Integer id) {
-        for (Banda banda : bandas) {
-            if (banda.getId().equals(id)) {
-                return banda;
-            }
-        }
-        return null;
+    public Banda buscarBanda(String id) {
+        return bandaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Banda nao encontrada"));
     }
 
-    public void excluirBanda(Integer id) {
+    public void excluirBanda(String id) {
         Banda banda = buscarBanda(id);
         if (banda != null && banda.getMusicas().isEmpty()) {
-            bandas.removeIf(b -> b.getId().equals(id));
+            bandaRepository.delete(banda);
         } else {
             throw new BandaNaoEncontradaException("Banda: " + id + " nao encontrada");
         }
