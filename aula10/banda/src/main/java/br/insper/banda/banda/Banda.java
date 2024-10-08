@@ -1,12 +1,9 @@
-package br.insper.banda;
+package br.insper.banda.banda;
 
+import br.insper.banda.musica.Musica;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
@@ -18,6 +15,7 @@ public class Banda {
     private String nome;
     private String pais;
     private Integer anoFormacao;
+    @Transient
     @JsonIgnore
     private ArrayList<Musica> musicas  = new ArrayList<>();
 

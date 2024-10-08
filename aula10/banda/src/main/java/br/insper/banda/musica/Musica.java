@@ -1,6 +1,9 @@
-package br.insper.banda;
+package br.insper.banda.musica;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import br.insper.banda.banda.Banda;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,7 +11,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Musica {
     @Id
     private String id;
+
+    @NotEmpty
     private String nome;
+    @Min(3)
+    @Max(10)
     private Float duracao;
     private Integer reproducoes;
     private Integer anoLancamento;

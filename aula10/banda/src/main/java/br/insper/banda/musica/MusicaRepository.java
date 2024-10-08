@@ -1,4 +1,4 @@
-package br.insper.banda;
+package br.insper.banda.musica;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

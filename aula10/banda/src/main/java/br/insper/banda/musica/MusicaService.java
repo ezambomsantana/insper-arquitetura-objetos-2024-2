@@ -1,5 +1,7 @@
-package br.insper.banda;
+package br.insper.banda.musica;
 
+import br.insper.banda.banda.Banda;
+import br.insper.banda.banda.BandaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,7 @@ public class MusicaService {
 
         Banda banda = bandaService.buscarBanda(musica.getBanda().getId());
         if (banda != null) {
+            musica.setBanda(banda);
             musicaRepository.save(musica);
             return "Música cadastrada com sucesso";
         } else {
