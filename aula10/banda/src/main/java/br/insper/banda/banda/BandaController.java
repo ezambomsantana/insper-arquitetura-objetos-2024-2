@@ -39,5 +39,11 @@ public class BandaController {
         bandaService.excluirBanda(id);
     }
 
+    @PutMapping("/{id}")
+    public RetornarBandaDTO editarBanda(@PathVariable String id,
+                                        @RequestBody EditarBandaDTO editarBandaDTO) {
+        return bandaService.editarBanda(id, editarBandaDTO);
+    }
+
 
 }

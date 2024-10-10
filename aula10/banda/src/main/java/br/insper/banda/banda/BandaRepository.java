@@ -10,4 +10,5 @@ public interface BandaRepository extends MongoRepository<Banda, String> {
 
     Page <Banda> findByPais(String pais, Pageable pageable);
 
+    Banda findByNome(String nome);
 }
