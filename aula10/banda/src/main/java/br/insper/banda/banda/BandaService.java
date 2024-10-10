@@ -4,7 +4,6 @@ import br.insper.banda.musica.Musica;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -16,9 +15,6 @@ public class BandaService {
 
     @Autowired
     private BandaRepository bandaRepository;
-
-    @Autowired
-    private MongoTemplate mongoTemplate;
 
 
     public RetornarBandaDTO cadastrarBanda(CadastrarBandaDTO dto) {
@@ -43,8 +39,6 @@ public class BandaService {
             return bandaRepository.findByPais(pais, pageable);
         }
 
-
-        mongoTemplate.query().
         return bandaRepository.findAll(pageable);
     }
 
