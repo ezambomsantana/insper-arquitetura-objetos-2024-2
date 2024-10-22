@@ -1,8 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function ListarBanda() {
 
   const [lista, setLista] = useState([])
+
+  useEffect(() => {
+    load()
+  }, [])
 
   function load() {
 
@@ -20,8 +24,6 @@ function ListarBanda() {
 
   return (
     <>
-      <button onClick={() => load()}>Carregar Bandas</button>
-
       <br/>
       <table>
         <tr>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Button, Grid, TextField } from '@mui/material';
 
 function CadastrarBanda() {
 
@@ -30,10 +31,38 @@ function CadastrarBanda() {
 
   return (
     <>
-      Nome: <input type='text' id='nome' value={nome} onChange={e => setNome(e.target.value)}></input><br/>
-      País: <input type='text' id='pais' value={pais} onChange={e => setPais(e.target.value)}></input><br/>
-      Ano Formação: <input type='text' id='anoFormacao' value={anoFormacao} onChange={e => setAnoFormacao(e.target.value)}></input><br/> 
-      <button onClick={() => click()}>Cadastrar</button>
+
+    <Grid container spacing={2}>
+      <Grid item xs={6}>
+        <TextField
+          label='Nome: '
+          value={nome}
+          onChange={e => setNome(e.target.value)}
+        />
+      </Grid>
+      <Grid item xs={6}>
+        <TextField
+          label='País: '
+          value={pais}
+          onChange={e => setPais(e.target.value)}
+        />
+      </Grid>
+      <Grid item xs={6}>
+        <TextField
+          label='Ano Formação: '
+          valor={anoFormacao}
+          onChange={e => setAnoFormacao(e.target.value)}
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <Button 
+          onClick={() => click()}
+          variant="contained"
+          color="success"
+        >Cadastrar</Button>
+        </Grid>
+
+      </Grid>
     </>
   )
 }
