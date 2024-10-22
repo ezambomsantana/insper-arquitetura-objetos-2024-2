@@ -63,11 +63,11 @@ function CadastrarBanda() {
       <Grid item xs={12}>
         <Select
           label='Ano Formação: '
-          value={anoFormacao}
+          value={idBiblioteca}
           onChange={e => setIdBiblioteca(e.target.value)}>
           <MenuItem value='id1'>Biblioteca 1</MenuItem>
-          <MenuItem value='id1'>Biblioteca 2</MenuItem>
-          <MenuItem value='id1'>Biblioteca 3</MenuItem>
+          <MenuItem value='id2'>Biblioteca 2</MenuItem>
+          <MenuItem value='id3'>Biblioteca 3</MenuItem>
         </Select>
       </Grid>
       <Grid item xs={12}>
